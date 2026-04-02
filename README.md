@@ -25,9 +25,17 @@ A common solution is to play [RuneScape on Steam](https://store.steampowered.com
 ## Prerequisites
 
 - A Jagex account
-- A working Linux installation
+- A working Linux installation using Wayland
 - Knowing how to install software using your Linux distribution's package manager
 - An NVIDIA GPU with drivers installed and working
+
+If you are unsure if your desktop is using Wayland, launch a terminal and run the following command:
+
+```sh
+echo $XDG_SESSION_TYPE
+```
+
+If you are using Wayland, it will say `wayland`.
 
 ## Installation guide
 
@@ -170,3 +178,11 @@ Verify that you are using Bottles' version of Wine (Soda), and not regular Wine.
 - Under "Components", make sure the "Runner" is set to `soda-9.0.1` (or similar), and not `sys-wine-11.0` (or similar). Soda is the version of Wine that Bottles comes with, which is better for running RuneScape than regular Wine.
 
 ![Bottles settings page, showing "Soda" as the selected Runner](assets/bottles-settings-soda.png)
+
+### The game does not launch when clicking "Play" in Bolt
+
+This can be caused by a variety of things, and will require troubleshooting.
+
+Start by launching Bolt from the terminal, using `flatpak run com.adamcake.Bolt`. This will let you see the console output, which may tell you what is going wrong.
+
+If you are familiar with shell scripting on Linux, you can also try manual debugging by modifying the helper script to, for example, echo variables to the console.
