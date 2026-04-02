@@ -50,6 +50,7 @@ If you are using Wayland, it will say `wayland`.
     - [Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal) (for configuring Wine environments)
         - `com.github.tchx84.Flatseal`
 - Notes
+    - Once installed, these should appear in your application launcher. This may differ depending on your desktop environment or window manager. Alternatively, these can be launched from the terminal using `flatpak run FLATPAK_ID`
     - Depending on your system, you can either use graphical installers that support Flatpak (e.g. [Discover](https://apps.kde.org/discover/) from KDE), or you may need to use Flatpak's commandline.
     - If prompted to choose between "system" and "user", select "system" by entering `1`.
     - If prompted about permissions or additional dependencies, agree to do so.
