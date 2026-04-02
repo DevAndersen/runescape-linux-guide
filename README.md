@@ -96,11 +96,14 @@ The helper script tells Bolt how to launch the RuneScape game client you install
         - If you changed where `launch-client.sh` is located, make sure to change this accordingly
     - Add another new entry under "Other files" with the text `~/.var/app/com.usebottles.bottles/data/bottles/`
         - This lets Bolt launch Bottles' Wine executable
-- ![Flatseal, showing the two added "Other files" entries](assets/flatseal-filesystem.png)
+
+![Flatseal, showing the two added "Other files" entries](assets/flatseal-filesystem.png)
+
 - Scroll down to "Session Bus"
     - Add a new entry under "Talks" with the text `org.freedesktop.Flatpak`
         - This lets Bolt launch processes outside of its Flatpak environment
-- ![Flatseal, showing the added "Talks" entry](assets/flatseal-session-bus.png)
+
+![Flatseal, showing the added "Talks" entry](assets/flatseal-session-bus.png)
 
 ### Configuring Bolt
 
@@ -118,7 +121,8 @@ The helper script tells Bolt how to launch the RuneScape game client you install
     - Note: This input field is fairly small, use the arrow keys to verify that this is the full text of the
 - If you changed where `launch-client.sh` is located, make sure to change this accordingly
 - Close the configuration menu
-- ![Bolt launcher's configuration page, showing the custom launch command](assets/bolt-launch-command.png)
+
+![Bolt launcher's configuration page, showing the custom launch command](assets/bolt-launch-command.png)
 
 ### Verify that the game works correctly
 
@@ -161,4 +165,5 @@ Verify that you are using Bottles' version of Wine (Soda), and not regular Wine.
 - Click the "RuneScape" bottle
 - Under "Options", click on "Settings"
 - Under "Components", make sure the "Runner" is set to `soda-9.0.1` (or similar), and not `sys-wine-11.0` (or similar). Soda is the version of Wine that Bottles comes with, which is better for running RuneScape than regular Wine.
-- ![Bottles settings page, showing "Soda" as the selected Runner](assets/bottles-settings-soda.png)
+
+![Bottles settings page, showing "Soda" as the selected Runner](assets/bottles-settings-soda.png)
