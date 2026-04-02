@@ -17,7 +17,7 @@ A common solution is to play [RuneScape on Steam](https://store.steampowered.com
 - This method requires using, and therefore also trusting, a third-party alternative to the Jagex Launcher.
 - This method of running RuneScape on Linux is not compatible with Bolt plugins.
 - Support for Alt1 or similar is untested and not guaranteed.
-- On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run its internal installation of RuneScape, without any performance issues, and without needing to install or use Bottles or Flatseal.
+- On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run its internal installation of RuneScape, without any performance issues, and without needing to install or use Bottles or Flatseal. Simply install Bolt with Flatpak, and the game should run as expected.
 - This is intended for non-immutable Linux distributions. For immutable systems, additional work may be required to persist the changes to the system.
 - This has only been tested on my own computer (KDE Plasma, Arch Linux, NVIDIA RTX 5080, GPU driver `nvidia-open 595.58.03-2`). This may not work on your computer.
 - I am not affiliated with Jagex or with Bolt.
