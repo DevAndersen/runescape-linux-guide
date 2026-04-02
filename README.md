@@ -51,7 +51,7 @@ A common solution is to play [RuneScape on Steam](https://store.steampowered.com
 
 - Download the RuneScape game client (not the Jagex Launcher) installer for Windows
     - Download page: https://www.runescape.com/download?force_test=control
-    - Note: Make sure the file you're download is `RuneScape-Setup.exe`, and not `Jagex Launcher Installer.exe`
+    - Note: Make sure the file you've downloaded is `RuneScape-Setup.exe`, and not `Jagex Launcher Installer.exe`
     - How to find this page for yourself
         - Go to the RuneScape website
         - Click "Download" in the menu bar
