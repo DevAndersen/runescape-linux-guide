@@ -24,7 +24,8 @@ RUNNER_NAME=$(sed -n 's/^Runner: //p' "$WINEPREFIX/bottle.yml")
 # The Wine executable for the specified runner.
 WINE="$BOTTLES_DATA_DIRECTORY/runners/$RUNNER_NAME/bin/wine64"
 
-# The RuneScape game client (this assumes you did not change anything when installing "RuneScape-Setup.exe" with Bottles).
+# The RuneScape game client.
+# Note: This assumes you did not change anything when installing "RuneScape-Setup.exe" with Bottles.
 RUNESCAPE_CLIENT="$WINEPREFIX/drive_c/Program Files/Jagex/RuneScape Launcher/RuneScape.exe"
 
 # Launches the game client.

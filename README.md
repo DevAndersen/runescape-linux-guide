@@ -76,13 +76,14 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
 
 ### Download the helper script
 
-The helper script tells Bolt how to launch the RuneScape game client you installed with Bottles.
+The helper script tells Bolt how to launch the RuneScape game client you installed with Bottles, and passes your authentication IDs so the game will automatically sign into the character you've selected in Bolt.
 
 - Download the [`launch-client.sh`](launch-client.sh) script from this repository
 - Save it to `$HOME/Games/RuneScape/Linux/`
     - Make sure to create the necessary directories
-    - If you copy it to a different location, make sure to change other
-- Note: If you're not sure if you did this correctly, launch a terminal and run the following script:
+    - Note: `$HOME` is meant to be substituted for your Linux home directory, typically `/home/USERNAME`
+    - Note: If you copy it to a different location, you will need to adjustments where the script is being referenced accordingly. This guide will mention when to do so.
+- Note: If you're not sure if you did this correctly, launch a terminal and run the following script to validate that the script exists in the expected location:
 
 ```sh
 [ -f "$HOME/Games/RuneScape/Linux/launch-client.sh" ] && echo "Script found" || echo "Script not found"
