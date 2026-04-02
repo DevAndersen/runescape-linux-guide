@@ -78,7 +78,7 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
 
 The helper script tells Bolt how to launch the RuneScape game client you installed with Bottles.
 
-- Download the `launch-client.sh` script from this repository
+- Download the [`launch-client.sh`](launch-client.sh) script from this repository
 - Save it to `$HOME/Games/RuneScape/Linux/`
     - Make sure to create the necessary directories
     - If you copy it to a different location, make sure to change other
