@@ -89,6 +89,8 @@ The helper script tells Bolt how to launch the RuneScape game client you install
     - Add a new entry under "Other files" with the text `~/Games/RuneScape/Linux/launch-client.sh`
         - This lets Bolt see the the `launch-client.sh` script
         - If you changed where `launch-client.sh` is located, make sure to change this accordingly
+    - Add another new entry under "Other files" with the text `~/.var/app/com.usebottles.bottles/data/bottles/`
+        - This lets Bolt launch Bottles' Wine executable
 - Scroll down to "Session Bus"
     - Add a new entry under "Talks" with the text `org.freedesktop.Flatpak`
         - This lets Bolt launch processes outside of its Flatpak environment
