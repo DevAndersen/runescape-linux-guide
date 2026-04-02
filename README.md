@@ -161,3 +161,4 @@ Verify that you are using Bottles' version of Wine (Soda), and not regular Wine.
 - Click the "RuneScape" bottle
 - Under "Options", click on "Settings"
 - Under "Components", make sure the "Runner" is set to `soda-9.0.1` (or similar), and not `sys-wine-11.0` (or similar). Soda is the version of Wine that Bottles comes with, which is better for running RuneScape than regular Wine.
+- ![Bottles settings page, showing "Soda" as the selected Runner](assets/bottles-settings-soda.png)
