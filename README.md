@@ -19,7 +19,7 @@ A common solution is to play RuneScape on Steam, using Proton to run the game. H
 - Support for Alt1 or similar is untested and not guaranteed.
 - On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run the game without any performance issues, and without needing to install or use Bottles or Flatseal.
 - This is intended for non-immutable Linux distributions. For immutable systems, additional work may be required to persist the changes to the system.
-- This has only been tested on my own computer (Arch Linux, NVIDIA RTX 5080, driver `nvidia-open 595.58.03-2`). This may not work on your computer.
+- This has only been tested on my own computer (KDE Plasma, Arch Linux, NVIDIA RTX 5080, driver `nvidia-open 595.58.03-2`). This may not work on your computer.
 - I am not affiliated with Jagex or with Bolt.
 
 ## Prerequisites
