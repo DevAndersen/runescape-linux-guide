@@ -124,6 +124,12 @@ The helper script tells Bolt how to launch the RuneScape game client you install
 - Launch the [developer console](https://runescape.wiki/w/Developer_console)
 - The developer console contain some text, including "GPU Device" in green. This should say something similar to "NVIDIA GeForce RTX 5080/PCIe/SSE2" (specific to your GPU). In the bottom-right of the developer console, it should say "NXT-Windows-64 | OpenGL"
 
+Example of the developer console with GPU rendering, running the Windows-native game client:
+
+![RuneScape's developer console, showing the GPU being correctly detected, and running the Windows-native game client](assets/runescape-devconsole-correct.png)
+
+- Note: If you wish to check your FPS using the `displayfps` command, make sure to fully log in. The lobby limits your FPS to 60. You might also need to change your "Foreground FPS" and "Background FPS" in the in-game graphics settings menu.
+
 ## Troubleshooting
 
 ### Very poor performance (low FPS)
@@ -135,6 +141,10 @@ To verify that this is the case, launch the [developer console](https://runescap
 Also, check the text in the bottom-right corner of the developer console, and see if it reads "NXT-Linux | OpenGL".
 
 If the above are true, the cause is likely that the launch command for Bolt has not been changed to point to the helper script, and Bolt is therefore defaulting to running its internal (Linux-native) game client.
+
+Example of the developer console with CPU rendering (`llvmpipe`), running the Linux-native game client:
+
+![RuneScape's developer console, showing the GPU not being detected (fallback to llvmpipe), and running the Linux-native game client](assets/runescape-devconsole-incorrect.png)
 
 To resolve this issue, change Bolt's launch command as specified in the installation guide.
 
