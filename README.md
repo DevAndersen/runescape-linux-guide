@@ -69,7 +69,9 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
 - ![Bottles, creating a new bottle](assets/bottles-new-bottle.png)
 - Click "Run Executable...", and select the `RuneScape-Setup.exe` file you downloaded
 - Go through the installation process
-- ![Launching the RuneScape installer with Bottles](assets/bottles-installing-runescape.png)
+
+![Launching the RuneScape installer with Bottles](assets/bottles-installing-runescape.png)
+
 - Note: Do not change any options from their default values.
 
 ### Download the helper script
