@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Helper script which tells Bolt how to launch RuneScape installed with Bottles.
+
 # Change the launch command for RS3 in Bolt to run this script.
 # Example: /bin/sh /home/USERNAME/Games/RuneScape/Linux/launch-client.sh
 # Note: This must be the fully qualified path. Bolt does not support "$HOME" or "~" as substitutes for the user's home directory.

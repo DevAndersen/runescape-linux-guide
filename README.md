@@ -84,7 +84,7 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
 
 ### Download the helper script
 
-The helper script tells Bolt how to launch the RuneScape game client you installed with Bottles, and passes your authentication IDs so the game will automatically sign into the character you've selected in Bolt.
+The helper script, `launch-client.sh`  tells Bolt how to launch the RuneScape game client you installed with Bottles, and passes your authentication IDs so the game will automatically sign into the character you've selected in Bolt.
 
 - Download the [`launch-client.sh`](launch-client.sh) script from this repository
 - Save it to `$HOME/Games/RuneScape/Linux/`
@@ -158,7 +158,7 @@ To verify that this is the case, launch the [developer console](https://runescap
 
 Also, check the text in the bottom-right corner of the developer console, and see if it reads "NXT-Linux | OpenGL".
 
-If the above are true, the cause is likely that the launch command for Bolt has not been changed to point to the helper script, and Bolt is therefore defaulting to running its internal (Linux-native) game client.
+If the above are true, the cause is likely that the launch command for Bolt has not been changed to point to `launch-client.sh`, and Bolt is therefore defaulting to running its internal (Linux-native) game client.
 
 Example of the developer console with CPU rendering (`llvmpipe`), running the Linux-native game client:
 
@@ -185,4 +185,4 @@ This can be caused by a variety of things, and will require troubleshooting.
 
 Start by launching Bolt from the terminal, using `flatpak run com.adamcake.Bolt`. This will let you see the console output, which may tell you what is going wrong.
 
-If you are familiar with shell scripting on Linux, you can also try manual debugging by modifying the helper script to, for example, echo variables to the console.
+If you are familiar with shell scripting on Linux, you can also try manual debugging by modifying `launch-client.sh` to, for example, echo variables to the console.
