@@ -4,13 +4,13 @@
 
 Getting RuneScape (aka. "RuneScape 3") to run on Linux can be tricky, particularly on computers with NVIDIA GPUs and a Wayland desktop environment.
 
-This is in large part because Jagex does not provide adequate support or maintenance for playing RuneScape on Linux, which results in more problems over time.
+This is in large part because Jagex does not provide adequate support or maintenance for playing RuneScape on Linux, which has resulted in an increasing number of problems as the Linux eco system evolves over time.
 
-The Jagex Launcher is not supported at all on Linux, and the Linux-native game client defaults to CPU rendering on NVIDIA+Wayland systems (resulting in very poor performance).
+The Jagex Launcher is not supported at Linux, and the Linux-native game client defaults to CPU rendering on NVIDIA+Wayland systems (resulting in very poor performance).
 
-Attempts have been made to force the Linux-native game client to detect NVIDIA GPUs on Wayland, however this solution involves a memory leak which will eventually cause problems when your computer runs out of free RAM.
+Attempts have been made to force the Linux-native game client to detect NVIDIA GPUs on Wayland, however this led other problems including a memory leak which will eventually cause the computer to run out of memory.
 
-A common solution is to play RuneScape on Steam, using Proton to run the game. However, not everyone wishes to connect their Jagex account to a Steam account, and playing on multiple characters at the same time isn't trivial.
+A common solution is to play [RuneScape on Steam](https://store.steampowered.com/app/1343400/RuneScape/), using [Proton](https://en.wikipedia.org/wiki/Proton_(software)) to run the game. This solution works, but not everyone wishes to connect their Jagex account to a Steam account, and playing on multiple characters at the same time isn't trivial when playing through Steam.
 
 ## Remarks
 
@@ -19,7 +19,7 @@ A common solution is to play RuneScape on Steam, using Proton to run the game. H
 - Support for Alt1 or similar is untested and not guaranteed.
 - On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run its internal installation of RuneScape, without any performance issues, and without needing to install or use Bottles or Flatseal.
 - This is intended for non-immutable Linux distributions. For immutable systems, additional work may be required to persist the changes to the system.
-- This has only been tested on my own computer (KDE Plasma, Arch Linux, NVIDIA RTX 5080, driver `nvidia-open 595.58.03-2`). This may not work on your computer.
+- This has only been tested on my own computer (KDE Plasma, Arch Linux, NVIDIA RTX 5080, GPU driver `nvidia-open 595.58.03-2`). This may not work on your computer.
 - I am not affiliated with Jagex or with Bolt.
 
 ## Prerequisites
@@ -41,9 +41,11 @@ A common solution is to play RuneScape on Steam, using Proton to run the game. H
         - `com.usebottles.bottles`
     - [Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal) (for configuring Wine environments)
         - `com.github.tchx84.Flatseal`
-- If prompted to choose between "system" and "user", select "system" by entering `1`.
-- If prompted about permissions or additional dependencies, agree to do so.
-- Note: As is always the case with software, it is strongly recommended that you install updates when they become available.
+- Notes
+    - Depending on your system, you can either use graphical installers that support Flatpak (e.g. [Discover](https://apps.kde.org/discover/) from KDE), or you may need to use Flatpak's commandline.
+    - If prompted to choose between "system" and "user", select "system" by entering `1`.
+    - If prompted about permissions or additional dependencies, agree to do so.
+    - As is always the case with software, it is strongly recommended that you install updates when they become available.
 
 ### Downloading the RuneScape installer
 
