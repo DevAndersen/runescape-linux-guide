@@ -14,10 +14,10 @@ A common solution is to play RuneScape on Steam, using Proton to run the game. H
 
 ## Remarks
 
-- This method requires using the [Bolt launcher](https://codeberg.org/Adamcake/Bolt), a third-party alternative to the Jagex Launcher.
+- This method requires using the [Bolt launcher](https://codeberg.org/Adamcake/Bolt), a third-party alternative to the Jagex Launcher, to sign into your Jagex account.
 - This method of running RuneScape on Linux is not compatible with Bolt plugins.
 - Support for Alt1 or similar is untested and not guaranteed.
-- On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run the game without any performance issues, and without needing to install or use Bottles or Flatseal.
+- On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run its internal installation of RuneScape, without any performance issues, and without needing to install or use Bottles or Flatseal.
 - This is intended for non-immutable Linux distributions. For immutable systems, additional work may be required to persist the changes to the system.
 - This has only been tested on my own computer (KDE Plasma, Arch Linux, NVIDIA RTX 5080, driver `nvidia-open 595.58.03-2`). This may not work on your computer.
 - I am not affiliated with Jagex or with Bolt.
@@ -29,9 +29,9 @@ A common solution is to play RuneScape on Steam, using Proton to run the game. H
 - Knowing how to install software using your Linux distribution's package manager
 - An NVIDIA GPU with drivers installed and working
 
-## Setup guide
+## Installation guide
 
-### Installations
+### Applications
 
 - Install [Flatpak](https://flatpak.org/) with your Linux distribution's package manager. Flatpak is a cross-distribution package manager.
 - Install the following Flatpaks:
@@ -41,6 +41,9 @@ A common solution is to play RuneScape on Steam, using Proton to run the game. H
         - `com.usebottles.bottles`
     - [Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal) (for configuring Wine environments)
         - `com.github.tchx84.Flatseal`
+- If prompted to choose between "system" and "user", select "system" by entering `1`.
+- If prompted about permissions or additional dependencies, agree to do so.
+- Note: As is always the case with software, it is strongly recommended that you install updates when they become available.
 
 ### Downloading the RuneScape installer
 
@@ -71,7 +74,6 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
 The helper script tells Bolt how to launch the RuneScape game client you installed with Bottles.
 
 - Download the `launch-client.sh` script from this repository
-    - Link: [INSERT LINK HERE]
 - Save it to `$HOME/Games/RuneScape/Linux/`
     - Make sure to create the necessary directories
     - If you copy it to a different location, make sure to change other
@@ -91,9 +93,11 @@ The helper script tells Bolt how to launch the RuneScape game client you install
         - If you changed where `launch-client.sh` is located, make sure to change this accordingly
     - Add another new entry under "Other files" with the text `~/.var/app/com.usebottles.bottles/data/bottles/`
         - This lets Bolt launch Bottles' Wine executable
+- ![Flatseal, showing the two added "Other files" entries](assets/flatseal-filesystem.png)
 - Scroll down to "Session Bus"
     - Add a new entry under "Talks" with the text `org.freedesktop.Flatpak`
         - This lets Bolt launch processes outside of its Flatpak environment
+- ![Flatseal, showing the added "Talks" entry](assets/flatseal-session-bus.png)
 
 ### Configuring Bolt
 
@@ -111,6 +115,7 @@ The helper script tells Bolt how to launch the RuneScape game client you install
     - Note: This input field is fairly small, use the arrow keys to verify that this is the full text of the
 - If you changed where `launch-client.sh` is located, make sure to change this accordingly
 - Close the configuration menu
+- ![Bolt launcher's configuration page, showing the custom launch command](assets/bolt-launch-command.png)
 
 ### Verify that the game works correctly
 
@@ -125,14 +130,21 @@ The helper script tells Bolt how to launch the RuneScape game client you install
 
 This is usually caused by the game not using your GPU, and instead using your CPU to render the game's graphics.
 
-To verify that this is the case, launch the [developer console](https://runescape.wiki/w/Developer_console), and read the text in green that starts with "GPU Device". If this says "llvmpipe (LLVM 21.1.8, 256 bits)" or similar, it means the game is using your CPU instead of your GPU to render the game, which will result in very poor performance. Also, check the text in the bottom-right corner of the developer console, and see if it reads "NXT-Linux | OpenGL".
+To verify that this is the case, launch the [developer console](https://runescape.wiki/w/Developer_console), and read the text in green that starts with "GPU Device". If this says "llvmpipe (LLVM 21.1.8, 256 bits)" or similar, it means the game is using your CPU instead of your GPU to render the game, which will result in very poor performance.
 
-If the above is true, the cause is likely that the launch command for Bolt has not been changed to point to the helper script, and Bolt is therefore falling back on running its internal (Linux-native) game client.
+Also, check the text in the bottom-right corner of the developer console, and see if it reads "NXT-Linux | OpenGL".
 
-To resolve this, change Bolt's launch command as specified in the setup guide.
+If the above are true, the cause is likely that the launch command for Bolt has not been changed to point to the helper script, and Bolt is therefore defaulting to running its internal (Linux-native) game client.
+
+To resolve this issue, change Bolt's launch command as specified in the installation guide.
 
 ### FPS capped at 60
 
 This is usually related to Wine not being optimized/configured correctly for the game.
 
 Verify that you are using Bottles' version of Wine (Soda), and not regular Wine.
+
+- Launch Bottles
+- Click the "RuneScape" bottle
+- Under "Options", click on "Settings"
+- Under "Components", make sure the "Runner" is set to `soda-9.0.1` (or similar), and not `sys-wine-11.0` (or similar). Soda is the version of Wine that Bottles comes with, which is better for running RuneScape than regular Wine.
