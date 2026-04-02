@@ -1,20 +1,20 @@
 # RuneScape on Linux (NVIDIA + Wayland, without Steam)
 
+This is a guide for playing RuneScape (aka. "RuneScape 3") on Linux, specifically for computers with NVIDIA GPUs, running a [Wayland](https://wayland.freedesktop.org/) desktop, without needing to use Steam.
+
 ## Introduction
 
-Getting RuneScape (aka. "RuneScape 3") to run on Linux can be tricky, particularly on computers with NVIDIA GPUs and a Wayland desktop environment.
+Playing RuneScape on Linux can be tricky, in large part because Jagex does not provide adequate support or maintenance for playing the game on Linux. The lackluster support has resulted in an increasing number of problems as the Linux eco system has evolved over time, particularly with the transition from x11 to Wayland. Several of these problems are specific to the combination of an NVIDIA GPU and a Wayland desktop.
 
-This is in large part because Jagex does not provide adequate support or maintenance for playing RuneScape on Linux, which has resulted in an increasing number of problems as the Linux eco system evolves over time.
+The Jagex Launcher is not supported at Linux, which necessitates using a third-party alternative for authentication and character switching. For this, the [Bolt launcher](https://flathub.org/en/apps/com.adamcake.Bolt) can be used, it is free an open-source.
 
-The Jagex Launcher is not supported at Linux, and the Linux-native game client defaults to CPU rendering on NVIDIA+Wayland systems (resulting in very poor performance).
+The Linux-native game client defaults to CPU rendering on NVIDIA+Wayland systems, which results in very poor performance. Attempts have been made to force the Linux-native game client to detect NVIDIA GPUs on Wayland, however this led other problems including a memory leak which will eventually cause the computer to run out of memory.
 
-Attempts have been made to force the Linux-native game client to detect NVIDIA GPUs on Wayland, however this led other problems including a memory leak which will eventually cause the computer to run out of memory.
-
-A common solution is to play [RuneScape on Steam](https://store.steampowered.com/app/1343400/RuneScape/), using [Proton](https://en.wikipedia.org/wiki/Proton_(software)) to run the game. This solution works, but not everyone wishes to connect their Jagex account to a Steam account, and playing on multiple characters at the same time isn't trivial when playing through Steam.
+A common solution is to play [RuneScape on Steam](https://store.steampowered.com/app/1343400/RuneScape/), using [Proton](https://en.wikipedia.org/wiki/Proton_(software)) to run the game. This solution works, but not everyone wishes to connect their Jagex account to a Steam account, and playing on multiple characters at the same time isn't trivial when playing through Steam. For these reasons, this guide will not make use of Steam.
 
 ## Remarks
 
-- This method requires using the [Bolt launcher](https://flathub.org/en/apps/com.adamcake.Bolt), a third-party alternative to the Jagex Launcher, to sign into your Jagex account.
+- This method requires using, and therefore also trusting, a third-party alternative to the Jagex Launcher.
 - This method of running RuneScape on Linux is not compatible with Bolt plugins.
 - Support for Alt1 or similar is untested and not guaranteed.
 - On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run its internal installation of RuneScape, without any performance issues, and without needing to install or use Bottles or Flatseal.
