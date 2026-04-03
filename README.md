@@ -20,6 +20,7 @@ A common solution is to play [RuneScape on Steam](https://store.steampowered.com
 - On computers not using NVIDIA+Wayland, Bolt should work out-of-the-box and run its internal installation of RuneScape, without any performance issues, and without needing to install or use Bottles or Flatseal. Simply install Bolt with Flatpak, and the game should run as expected.
 - This is intended for non-immutable Linux distributions. For immutable systems, additional work may be required to persist the changes to the system.
 - This has only been tested on my own computer (KDE Plasma, Arch Linux, NVIDIA RTX 5080, GPU driver `nvidia-open 595.58.03-2`). This may not work on your computer.
+- This is not the definitive way of getting the game to run on Linux, this is simply how I do it to make it run correctly on my computer.
 - I am not affiliated with Jagex or with Bolt.
 
 ## Prerequisites
@@ -75,7 +76,9 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
     - Name: "RuneScape" (note: this is case sensitive)
     - Select "Gaming"
     - Make sure the runner set to "soda" (the version shouldn't matter)
-- ![Bottles, creating a new bottle](assets/bottles-new-bottle.png)
+
+![Bottles, creating a new bottle](assets/bottles-new-bottle.png)
+
 - Click "Run Executable...", and select the `RuneScape-Setup.exe` file you downloaded
 - Go through the installation process
 
@@ -83,13 +86,14 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
 
 - Note: Do not change any options from their default values.
 
-### Download the helper script
+### Downloading the helper script
 
 The helper script, `launch-client.sh`, tells Bolt how to launch the RuneScape game client you installed with Bottles, and passes your authentication IDs so the game will automatically sign into the character you've selected in Bolt.
 
 - Download the [`launch-client.sh`](launch-client.sh) script from this repository
 - Save it to `$HOME/Games/RuneScape/Linux/`
     - Make sure to create the necessary directories
+    - Note: If you did not name your bottle "RuneScape", open the script in a text editor and edit it accordingly
     - Note: `$HOME` is meant to be substituted for your Linux home directory, typically `/home/USERNAME`
     - Note: If you copy it to a different location, you will need to adjustments where the script is being referenced accordingly. This guide will mention when to do so.
 - Note: If you're not sure if you did this correctly, launch a terminal and run the following script to validate that the script exists in the expected location:
@@ -127,7 +131,7 @@ The helper script, `launch-client.sh`, tells Bolt how to launch the RuneScape ga
 - Make sure "RS3" is selected from the top bar
 - Click the settings button (round button with a cog icon)
 - Select "RS3"
-- Change the launch command the following: `/bin/sh /home/USERNAME/Games/RuneScape/Linux/launch-client.sh`
+- Change the launch command to the following: `/bin/sh /home/USERNAME/Games/RuneScape/Linux/launch-client.sh`
     - Note: Make sure to change "USERNAME" to the username of your user on your Linux installation
         - If you're not sure what your username is, launch a terminal window and run the command `whoami`
     - Note: This input field is fairly small, use the arrow keys to verify that this is the full text of the
@@ -136,7 +140,7 @@ The helper script, `launch-client.sh`, tells Bolt how to launch the RuneScape ga
 
 ![Bolt launcher's configuration page, showing the custom launch command](assets/bolt-launch-command.png)
 
-### Verify that the game works correctly
+### Verifying that the game works correctly
 
 - Using Bolt, select a character from the drop-down menu, and click "Play"
 - The RuneScape splash screen should appear, followed by the game launching you into the lobby
