@@ -32,7 +32,7 @@ RUNESCAPE_CLIENT="$WINEPREFIX/drive_c/Program Files/Jagex/RuneScape Launcher/Run
 
 # Launches the game client.
 # - Run a process on the host.
-# - Pass the Jagex authentication credential environment variables from Bolt.
+# - Pass the Jagex authentication credential environment variables from Bolt (JX_DISPLAY_NAME is not necessary for authentication to work).
 # - Specify the Wine prefix.
 # - Run the RuneScape client, using the specified Wine runner.
 /bin/flatpak-spawn \

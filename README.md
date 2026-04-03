@@ -75,7 +75,7 @@ Bolt will normally handle this on its own, however it will use the Linux-native 
 - Create a new bottle ("+" button in the top-left corner)
     - Name: "RuneScape" (note: this is case sensitive)
     - Select "Gaming"
-    - Make sure the runner set to "soda" (the version shouldn't matter)
+    - Make sure the runner set to "soda" (if multiple versions are available, choose the latest)
 
 ![Bottles, creating a new bottle](assets/bottles-new-bottle.png)
 
