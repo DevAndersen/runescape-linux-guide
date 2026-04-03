@@ -8,7 +8,7 @@ Playing RuneScape on Linux can be tricky, in large part because Jagex does not p
 
 The Jagex Launcher is not supported at Linux, which necessitates using a third-party alternative for authentication and character switching. For this, the [Bolt launcher](https://flathub.org/en/apps/com.adamcake.Bolt) can be used, it is free and open-source.
 
-The Linux-native game client defaults to CPU rendering on NVIDIA+Wayland systems, which results in very poor performance. Attempts have been made to force the Linux-native game client to detect NVIDIA GPUs on Wayland, however this led other problems including a memory leak which will eventually cause the computer to run out of memory.
+Bolt works very well, however it uses the Linux-native game client which defaults to CPU rendering on NVIDIA+Wayland systems, resulting in very poor performance. Attempts have been made to force the Linux-native game client to detect NVIDIA GPUs on Wayland, however this led other problems including a memory leak which will eventually cause the computer to run out of memory.
 
 A common solution is to play [RuneScape on Steam](https://store.steampowered.com/app/1343400/RuneScape/), using [Proton](https://en.wikipedia.org/wiki/Proton_(software)) to run the game. This solution works, but not everyone wishes to connect their Jagex account to a Steam account, and playing on multiple characters at the same time isn't trivial when playing through Steam. For these reasons, this guide will not make use of Steam.
 
