@@ -14,6 +14,7 @@ A common solution is to play [RuneScape on Steam](https://store.steampowered.com
 
 ## Remarks
 
+- **May not be safe for hardcore ironmen.** There exists an issue where the game client may lose connection to the server and be unable to reconnect, necessitating the client be closed and relaunched. This leaves the player character unresponsive, and if in a dangerous situation, can result in death, with no possibility for the player to intervene. The cause of this issue is currently unknown, though it happens fairly infrequently.
 - This method requires using, and therefore also trusting, a third-party alternative to the Jagex Launcher.
 - This method of running RuneScape on Linux is not compatible with Bolt plugins.
 - Support for Alt1 or similar is untested and not guaranteed.
