@@ -10,6 +10,11 @@
 # Note: This is case sensitive, and must be an exact match of the name of the bottle you created in the Bottles application.
 BOTTLE_NAME="RuneScape"
 
+# Whether or not the game should access beta servers.
+# Change this accordingly if you wish to access normal servers (false) or beta servers (true).
+# Note: If there is no ongoing beta, attempts to start the client will result in an error.
+BETA=false
+
 # Determine the user's home directory on the host.
 HOST_HOME="$(/bin/flatpak-spawn --host /bin/sh -c 'printf "%s\n" "$HOME"')"
 
@@ -30,15 +35,22 @@ WINE="$BOTTLES_DATA_DIRECTORY/runners/$RUNNER_NAME/bin/wine64"
 # Note: This assumes you did not change anything when installing "RuneScape-Setup.exe" with Bottles.
 RUNESCAPE_CLIENT="$WINEPREFIX/drive_c/Program Files/Jagex/RuneScape Launcher/RuneScape.exe"
 
+# The config URI (determines if the game should access beta- or normal servers).
+if [ "$BETA" = true ]; then
+    CONFIG_URI="rs-launch://www.runescape.com/jav_config_beta.ws"
+else
+    CONFIG_URI="rs-launch://www.runescape.com/jav_config.ws"
+fi
+CONFIG_URI
 # Launches the game client.
 # - Run a process on the host.
 # - Pass the Jagex authentication credential environment variables from Bolt (JX_DISPLAY_NAME is not necessary for authentication to work).
 # - Specify the Wine prefix.
-# - Run the RuneScape client, using the specified Wine runner.
+# - Run the RuneScape client, using the specified Wine runner, using the specified config URI.
 /bin/flatpak-spawn \
  --host \
  --env=JX_DISPLAY_NAME="$JX_DISPLAY_NAME" \
  --env=JX_CHARACTER_ID="$JX_CHARACTER_ID" \
  --env=JX_SESSION_ID="$JX_SESSION_ID" \
  --env=WINEPREFIX="$WINEPREFIX" \
- "$WINE" "$RUNESCAPE_CLIENT"
+ "$WINE" "$RUNESCAPE_CLIENT" "--configURI" "$CONFIG_URI"
