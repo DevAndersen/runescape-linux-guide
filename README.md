@@ -61,12 +61,8 @@ If you are using Wayland, it will say `wayland`.
 ### Downloading the RuneScape installer
 
 - Download the RuneScape game client (not the Jagex Launcher) installer for Windows
-    - Download page: https://www.runescape.com/download?force_test=control
-    - Note: Make sure the file you've downloaded is `RuneScape-Setup.exe`, and not `Jagex Launcher Installer.exe`
-    - How to find this page for yourself
-        - Go to the RuneScape website
-        - Click "Download" in the menu bar
-        - Scroll down and click the small link that reads "Game Direct Download"
+    - Download link: https://content.runescape.com/downloads/windows/RuneScape-Setup.exe
+    - Note: This file used to be linked directly on https://www.runescape.com/download?force_test=control, but that is no longer the case.
 
 ###  Installing RuneScape using Bottles
 
